@@ -22,9 +22,9 @@ Out of Scope: Full word or sentence recognition, voice synthesis, and multilingu
 
 | Team Member     | GitHub Account   | Role   | Responsibilities   |
 | --------------- | ---------------- | ------ | ------------------ |
-| Hazem Khaled    | hazemkhaled551   |   _    | [Responsibilities] |
-| Eslam Elhosuiny | eslamelhosuniy   |   _    | [Responsibilities] |
-| Farha Ashraf    | farha-158        |   _    | [Responsibilities] |
+| Hazem Khaled    | hazemkhaled551   |   _    | Convert each image into a set of points representing the hand shape.|
+| Eslam Elhosuiny | eslamelhosuniy   |   _    | Build a model capable of recognizing different hand signs. |
+| Farha Ashraf    | farha-158        |   _    | Create a database containing images of the hand performing different sign gestures. |
 
 ## Tools and Usage
 
