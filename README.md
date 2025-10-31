@@ -50,7 +50,7 @@ Break down the project into a 4-week timeline with milestones, deliverables, and
 
     - Create a database containing images of the hand performing different sign gestures.
     - Run the camera using OpenCV.
-    - Define the letters to be trained (A, B, L).
+    - Define the letters to be trained (V, W, L).
 - **Deliverables:** 
 
     - 100 images captured for each letter.
@@ -77,12 +77,11 @@ Break down the project into a 4-week timeline with milestones, deliverables, and
 
 - **Milestones:** 
 
-    - Build a model capable of recognizing different hand signs.
+    - Build a model capable of recognizing different 3 hand signs.
     - Load data from data.pickle.
-    - Train a RandomForestClassifier model using scikit-learn.
-- **Deliverables:** 
-
-    - Trained model evaluated using accuracy_score.
+    - Train model using scikit-learn.
+- **Deliverables:**
+  
     - Save the trained model as model.p using pickle.
 - **Assigned:** Eslam Elhosuiny
 
@@ -96,7 +95,7 @@ Break down the project into a 4-week timeline with milestones, deliverables, and
     - Pass the coordinates to the trained model for prediction.
 - **Deliverables:** 
 
-    - Display predicted letter (A, B, L) on the screen.
+    - Display predicted letter (V, W, L) on the screen.
     - Show a rectangle around the detected hand.
 - **Assigned:** Hazem Khaled, Eslam Elhosuiny, Farha Ashraf
 
