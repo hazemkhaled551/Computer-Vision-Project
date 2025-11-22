@@ -65,7 +65,7 @@ with mp_hands.Hands(
 
 
 with open("data.pickle", "wb") as f:
-    pickle.dump((data, labels), f)
+    pickle.dump({"data": data, "labels": labels}, f)
 
 print("saved to data.pickle")
 print("length of data:", len(data))
