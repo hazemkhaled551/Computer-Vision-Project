@@ -11,7 +11,6 @@ if not os.path.exists(INVALID_DIR):
     os.makedirs(INVALID_DIR)
 
 mp_hands = mp.solutions.hands
-mp_drawing = mp.solutions.drawing_utils
 
 data = []
 labels = []
@@ -33,36 +32,33 @@ with mp_hands.Hands(
             img_path = os.path.join(label_path, img_name)
             img = cv2.imread(img_path)
 
-            
             if img is None:
-                print("Invalid image (None):", img_path)
                 shutil.move(img_path, os.path.join(INVALID_DIR, img_name))
                 continue
 
             img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             results = hands.process(img_rgb)
 
-        
             if not results.multi_hand_landmarks:
-                print("No landmarks detected:", img_path)
                 shutil.move(img_path, os.path.join(INVALID_DIR, img_name))
                 continue
 
-        
-            for hand_landmarks in results.multi_hand_landmarks:
-                landmarks = []
+            hand_landmarks = results.multi_hand_landmarks[0]
 
-                h, w, _ = img.shape
+            x_list = []
+            y_list = []
+            data_aux = []
 
-                for lm in hand_landmarks.landmark:
-                    x = lm.x * w
-                    y = lm.y * h
-                    landmarks.append(x)
-                    landmarks.append(y)
+            for lm in hand_landmarks.landmark:
+                x_list.append(lm.x)
+                y_list.append(lm.y)
 
-                data.append(landmarks)
-                labels.append(int(label))
+            for lm in hand_landmarks.landmark:
+                data_aux.append(lm.x - min(x_list))
+                data_aux.append(lm.y - min(y_list))
 
+            data.append(data_aux)
+            labels.append(int(label))
 
 with open("data.pickle", "wb") as f:
     pickle.dump({"data": data, "labels": labels}, f)
